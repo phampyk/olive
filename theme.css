@@ -1,7 +1,64 @@
-body {
-  background-color: red;
+:root {
+  --color-primary: #beceb7;
+  --color-accent: #7e9d70;
+  --color-background: #dee6db;
+  --color-font: #798f70;
+}
+
+body{
+	background-color: var(--color-background);
+	color: var(--color-font);
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 action-button button {
-  background-color:  green;
+	background-color: var(--color-primary);
+	border: none;
+	color: var(--color-font);
+	font-weight: bold;
+	text-transform: uppercase;
+	box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.2);
+}
+
+action-button button:focus {
+	border: none;
+}
+
+action-button button:focus {
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+span.icon{
+	color: var(--color-accent);
+}
+
+nav.sidebar{
+	box-shadow: 0px 4px 5px 3px rgba(0,0,0,0.2);
+}
+
+.sidebar{
+	background-color: var(--color-primary);
+	color: var(--color-font);
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+nav ul li a:hover{
+	background-color: var(--color-accent);
+	color: var(--color-background);
+}
+
+#sidebar-toggler-button{
+	color: var(--color-background);
+    background-color: var(--color-accent);
+    border: none;
+    box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.2);
+	border-radius: 10%;
+}
+
+h1 a, h1 a:visited{
+	color: var(--color-font);
+	font-weight: bold;
+	text-decoration: none;
 }
