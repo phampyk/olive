@@ -1,3 +1,3 @@
 # Olive Theme for Olivetin
 
-![Screenshot of the theme](Cover.png "Screenshot")
+![Screenshot of the theme](cover.png "Screenshot")
