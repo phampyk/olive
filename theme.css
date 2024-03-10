@@ -8,9 +8,16 @@
 body{
 	background-color: var(--color-background);
 	color: var(--color-font);
-	font-weight: bold;
-	text-transform: uppercase;
 }
+
+/* FIELDSET */
+
+legend {
+    text-transform: uppercase;
+	font-weight: bold;
+}
+
+/* OLIVETIN BUTTONS */
 
 action-button button {
 	background-color: var(--color-primary);
@@ -33,6 +40,8 @@ span.icon{
 	color: var(--color-accent);
 }
 
+/* NAVBAR */
+
 nav.sidebar{
 	box-shadow: 0px 4px 5px 3px rgba(0,0,0,0.2);
 }
@@ -42,6 +51,10 @@ nav.sidebar{
 	color: var(--color-font);
 	font-weight: bold;
 	text-transform: uppercase;
+}
+
+nav ul li {
+    border-bottom: none;
 }
 
 nav ul li a:hover{
@@ -57,8 +70,186 @@ nav ul li a:hover{
 	border-radius: 10%;
 }
 
+#sidebar-toggler-button:hover, #sidebar-toggler-button:focus {
+	color: var(--color-font);
+}
+
 h1 a, h1 a:visited{
 	color: var(--color-font);
 	font-weight: bold;
 	text-decoration: none;
+}
+
+/* POPUPS */
+
+form div.wrapper{
+    background-color: transparent;
+}
+
+#argument-popup{
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+    border-radius: 25px;
+}
+
+#execution-results-popup{
+	background-color: var(--color-primary);
+    color: var(--color-accent);
+    border-radius: 25px;
+}
+
+pre#execution-dialog-stdout{
+	border: 1px solid var(--color-accent);
+}
+
+select {
+	background-color: var(--color-accent);
+	border: none;
+	color: var(--color-background);
+}
+
+/* BUTTONS */
+
+button, input[type="submit"]{
+    border-radius: 5px;
+    background-color: var(--color-primary);
+    color: var(--color-font);
+    border: 3px solid var(--color-accent);
+	box-shadow: 0 0 6px rgba(0, 0, 0, .3);
+}
+
+button:hover, input[type="submit"]:hover{
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+
+button:focus {
+  outline: 1px solid var(--color-accent);
+}
+
+/* START BUTTON */
+
+input[name="start"]:hover{
+    color: var(--color-background);
+    background-color: var(--color-accent);
+}
+
+button:disabled, input[type="submit"]:disabled{
+    background-color: var(--color-dark);
+}
+
+/* CANCEL BUTTON */
+
+button[name="cancel"]:hover{
+    color: var(--color-background);
+    background-color: var(--color-accent);
+}
+
+/* LOGS */
+
+div.toolbar{
+	background-color: var(--color-background);
+	border: none;
+}
+
+table{
+	background-color: var(--color-background);
+	color: var(--color-primary);
+	border: none;
+	box-shadow: none;
+}
+
+tr.log-row:nth-child(odd) {
+	background-color: var(--color-background);
+	color: var(--color-primary);
+	border: none;
+}
+tr.log-row:nth-child(even), tr {
+	background-color: var(--color-primary);
+	color: var(--color-font);
+	border: none;
+}
+
+tr:hover td{
+	background-color: var(--color-font);
+	color: var(--color-background);
+}
+
+tr:hover td a{
+	color: var(--color-background);
+}
+
+tr:hover td span.icon{
+	color: var(--color-background);
+}
+
+td, th{
+	background-color: transparent;
+	border: none;
+	color: var(--color-font);
+	box-shadow: none;
+}	
+
+td a{
+	color: var(--color-accent);
+}	
+
+input {
+	background-color: var(--color-accent);
+	color: var(--color-primary);
+	border: 1px solid #cdcdcd;
+	border-color: rgba(178, 128, 126, .7);
+}
+
+input#logSearchBox{
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 64 64'%3E%3Cg fill='%237e9d70'%3E%3Cpath d='M8.25 10.875a2.625 2.625 0 1 1 5.25 0a2.625 2.625 0 0 1-5.25 0'/%3E%3Cpath fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75s9.75-4.365 9.75-9.75S17.385 2.25 12 2.25m-1.125 4.5a4.125 4.125 0 1 0 2.338 7.524l2.007 2.006a.75.75 0 1 0 1.06-1.06l-2.006-2.007a4.125 4.125 0 0 0-3.399-6.463' clip-rule='evenodd'/%3E%3C/g%3E%3C/svg%3E");
+	background-position: 2px 4px;
+	background-repeat: no-repeat;
+	padding-left: 40px;
+	background-color: var(--color-primary);
+	color: var(--color-font);
+	border: none;
+	border-color: rgba(178, 128, 126, .7);
+	border-radius: 50px;
+}
+
+button#searchLogsClear{
+	background-color: var(--color-accent);
+	color: var(--color-primary);
+	font-weight: 900;
+	border-radius: 15px;
+}
+
+::placeholder{
+	color: transparent;
+}
+
+.action-failed {
+    transition: 1s;
+    background-color: transparent;
+    color: red;
+  }
+  
+.action-success {
+    transition: 1s;
+    background-color: transparent;
+    color: limegreen;
+}
+  
+.action-nonzero-exit {
+    animation: kf-action-nonzero-exit 1s;
+    transition: 1s;
+    background-color: transparent;
+    color: orange;
+}
+  
+.action-timeout {
+    transition: 1s;
+    background-color: transparent;
+    color: cyan;
+}
+  
+.action-blocked {
+    transition: 1s;
+    background-color: transparent;
+    color: purple;
 }
