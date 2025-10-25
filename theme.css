@@ -1,6 +1,7 @@
 :root {
   --color-primary: #beceb7;
   --color-accent: #7e9d70;
+  --color-accent-2:#9EB694;
   --color-background: #dee6db;
   --color-font: #798f70;
   --color-red: #d1635f;
@@ -19,14 +20,6 @@ body{
 header{
   background-color: var(--color-background);
 }
-
-#username {
-  margin-right: 2em;
-  color: var(--color-font);
-	font-weight: bold;
-	text-transform: uppercase;
-}
-
 
 footer{
 	color: var(--color-font)
@@ -55,17 +48,29 @@ button {
 	color: var(--color-font);
 	font-weight: bold;
 	text-transform: uppercase;
-	box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.2);
+}
+
+action-button button {
+  box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.3);
 }
 
 button:hover {
-	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  color: var(--color-font);
+  background-color: var(--color-accent-2);
+  border: 3px solid var(--color-accent);
+}
+
+action-button button:hover{
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 button:focus {
 	border: 3px solid var(--color-accent);
-	box-shadow: 0 0 10px rgba(0,0,0,0.3);
   outline: none;
+}
+
+action-button button:focus{
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 div.display{
@@ -114,6 +119,11 @@ nav ul li a:focus{
   outline: 0;
 }
 
+nav ul li a.selected {
+  background-color: var(--color-accent);
+	color: var(--color-primary);
+}
+
 #sidebar-toggler-button{
 	color: var(--color-background);
   background-color: var(--color-accent);
@@ -137,7 +147,11 @@ h1 a, h1 a:visited{
 a:focus {
   color: var(--color-background);
   background-color: var(--color-accent);
-  outline: 2px solid var(--color-font);
+  outline: 0;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--color-accent);
+  border-radius: 2px;
 }
 
 /* POPUPS */
@@ -271,11 +285,31 @@ input {
   outline: 1px solid var(--color-accent);
 }
 
+input:focus { 
+  outline: 2px solid var(--color-accent);
+}
+
+.box-shadow p {
+  background-color: var(--color-primary);
+  color: var(--color-font);
+}
+
+/* LOGS SEARCH */
+
+label.input-with-icons{
+  background-color: var(--color-background);
+  border: none;
+  gap: 0.5em; 
+}
+
+label.input-with-icons svg{
+  color: var(--color-background);
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  padding: 0.1em;
+}
+
 input#logSearchBox{
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 64 64'%3E%3Cg fill='%237e9d70'%3E%3Cpath d='M8.25 10.875a2.625 2.625 0 1 1 5.25 0a2.625 2.625 0 0 1-5.25 0'/%3E%3Cpath fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75s9.75-4.365 9.75-9.75S17.385 2.25 12 2.25m-1.125 4.5a4.125 4.125 0 1 0 2.338 7.524l2.007 2.006a.75.75 0 1 0 1.06-1.06l-2.006-2.007a4.125 4.125 0 0 0-3.399-6.463' clip-rule='evenodd'/%3E%3C/g%3E%3C/svg%3E");
-	background-position: 2px 4px;
-	background-repeat: no-repeat;
-	padding-left: 40px;
 	background-color: var(--color-primary);
 	color: var(--color-font);
 	border: none;
@@ -291,13 +325,32 @@ button#searchLogsClear{
 	border-radius: 15px;
 }
 
+button#searchLogsClear svg{
+  color: var(--color-background);
+	background-color: transparent;
+}
+
 button#searchLogsClear:hover, button#searchLogsClear:focus{
+  color: var(--color-primary);
 	background-color: var(--color-red);
+	font-weight: 900;
+	border-radius: 15px;
+  outline: none;
+}
+
+button#searchLogsClear:disabled{
+  color: var(--color-surface-2);
+	background-color: var(--color-background);
+	font-weight: 900;
+	border-radius: 15px;
+  border-color: var(--color-surface-2);
 }
 
 ::placeholder{
 	color: transparent;
 }
+
+/* STATUS INFO*/
 
 .action-failed {
   color: var(--color-background);
@@ -327,4 +380,56 @@ button#searchLogsClear:hover, button#searchLogsClear:focus{
 span.tag{
   color: var(--color-background);
   background-color: var(--color-accent);
+}
+
+/* USERNAME */
+
+#link-login > a {
+  color: var(--color-font);
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+#link-login > a:hover {
+  color: var(--color-accent-2);
+}
+
+#link-login > a:focus {
+  color: var(--color-background);
+  background-color: var(--color-accent);
+  outline: 0;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--color-accent);
+  border-radius: 2px;
+}
+
+#link-logout > a {
+  color: var(--color-font);
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+#link-logout > a:hover {
+  color: var(--color-accent-2);
+}
+
+#link-logout > a:focus {
+  color: var(--color-background);
+  background-color: var(--color-accent);
+  outline: 0;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--color-accent);
+  border-radius: 2px;
+}
+
+span#username {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+div.userinfo{
+  color: var(--color-font);
+  font-size: medium;
 }
